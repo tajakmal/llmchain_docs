@@ -6,7 +6,7 @@ Installation,
 Scraping and Preprocessing,
 Embedding and Indexing,
 Retrieval,
-Retrieval-Augmented Generation,
+Retrieval-Augmented Generation
 
 ## Installation
 
