@@ -1,7 +1,7 @@
-Langchain Docs Scraper and GPT-4 Q&A Bot
+# Langchain Docs Scraper and GPT-4 Q&A Bot
 This project demonstrates how to scrape the Langchain documentation, preprocess the text, embed the text using OpenAI's text-embedding-ada-002 model, store the embeddings in Pinecone, and utilize GPT-4 to answer questions based on the scraped content.
 
-Table of Contents
+## Table of Contents
 Installation
 Scraping and Preprocessing
 Embedding and Indexing
