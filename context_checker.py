@@ -9,7 +9,6 @@ def display_answer(answer):
 
 def get_gpt4_answer(messages):
     response = openai.ChatCompletion.create(
-        #model="gpt-4",
         model="gpt-3.5-turbo",
         messages=messages
     )
@@ -44,7 +43,6 @@ index_name = 'gpt-4-langchain-docs'
 index = pinecone.Index(index_name)
 
 # System message to prime the GPT-4 model
-#primer = f"""You are Q&A bot. A highly intelligent system that answers user questions based on the information provided by the user above each question. If the information can not be found in the information provided by the user you truthfully say "I don't know"."""
 primer = f"""You are Q&A bot. A highly intelligent system that answers user questions. You will first try to answer based on the information provided by the user above each question. If the information cannot be found in the information provided by the user then use your own pre-trained model."""
 # Initialize conversation with the system message
 conversation = [{"role": "system", "content": primer}]
@@ -61,6 +59,10 @@ while True:
 
     # Get the augmented query
     augmented_query = get_augmented_query(user_input, index, embed_model)
+
+    # Print the context being sent to the model
+    print("Context being sent to the model:")
+    print(augmented_query)
 
     # Add augmented query to the conversation
     conversation.append({"role": "user", "content": augmented_query})
