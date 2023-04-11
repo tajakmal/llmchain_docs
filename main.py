@@ -35,7 +35,7 @@ def get_gpt4_answer(messages):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         #model="gpt-4",
-        temperature=0.6,
+        temperature=0.7,
         messages=messages
     )
     return response['choices'][0]['message']['content']
