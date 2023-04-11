@@ -34,6 +34,8 @@ def truncate_conversation(conversation, max_tokens=4096):
 def get_gpt4_answer(messages):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
+        #model="gpt-4",
+        temperature=0.6,
         messages=messages
     )
     return response['choices'][0]['message']['content']
@@ -76,6 +78,11 @@ while True:
 
     augmented_query = get_augmented_query(user_input, index, embed_model)
     conversation.append({"role": "user", "content": augmented_query})
+
+    # Print the context being sent to the model
+    #print("Context being sent to the model:")
+    #print(augmented_query)
+    #print(conversation)
 
     truncated_conversation = truncate_conversation(conversation)
     gpt4_response = get_gpt4_answer(truncated_conversation)
