@@ -64,7 +64,8 @@ pinecone.init(
 index_name = 'gpt-4-langchain-docs'
 index = pinecone.Index(index_name)
 
-primer = f"""You are Q&A bot. A highly intelligent system that answers user questions. You will first try to answer based on the information provided by the user above each question. If the information cannot be found in the information provided by the user then use your own pre-trained model."""
+#primer = f"""You are Q&A bot. A highly intelligent system that answers user questions. You will first try to answer based on the information provided by the user above each question. If the information cannot be found in the information provided by the user then use your own pre-trained model."""
+primer = f"""You are Q&A bot. A highly intelligent system that answers user questions."""
 conversation = [{"role": "system", "content": primer}]
 
 print("You can now chat with the AI. Type 'exit' to end the conversation.")
@@ -89,4 +90,4 @@ while True:
 
     conversation.append({"role": "assistant", "content": gpt4_response})
 
-    print("AI:", gpt4_response)
+    print("AI:", gpt4_response,"\n")
