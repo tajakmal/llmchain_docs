@@ -61,7 +61,7 @@ pinecone.init(
     environment="us-central1-gcp"
 )
 
-index_name = 'gpt-4-langchain-docs'
+index_name = 'memory'
 index = pinecone.Index(index_name)
 
 #primer = f"""You are Q&A bot. A highly intelligent system that answers user questions. You will first try to answer based on the information provided by the user above each question. If the information cannot be found in the information provided by the user then use your own pre-trained model."""
