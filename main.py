@@ -33,8 +33,8 @@ def truncate_conversation(conversation, max_tokens=4096):
 
 def get_gpt4_answer(messages):
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        #model="gpt-4",
+        #model="gpt-3.5-turbo",
+        model="gpt-4",
         temperature=0.7,
         messages=messages
     )
